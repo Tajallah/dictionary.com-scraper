@@ -7,7 +7,7 @@ class wotd:
         pos = []
         defs = []
 
-        def __init__():
+        def __init__(self):
                 dicc = urlopen('http://www.dictionary.com/')
                 soup = beausu(dicc, 'html.parser')
 
@@ -22,12 +22,13 @@ class wotd:
                 self.pos = [item.text for item in soup.find_all(class_='luna-pos')]
                 self.defs = [item.text for item in soup.find_all(class_='css-9sn2pa e10vl5dg6')]
 
-        def format():
+        def format(self):
                 output = ''
                 output += '**' + self.word + '**\n\n'
                 output += '[' + self.alt_spellings + ']\n\n'
                 for item in self.pos:
                         output += item + '\n' #todo find cases of multiple POS and add handling for them
+                output += '\n'
                 for item in self.defs:
                         output += '*\'' + item +'*\'\n'
                 return output
