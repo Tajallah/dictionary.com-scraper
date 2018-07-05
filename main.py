@@ -24,10 +24,10 @@ class wotd:
 
         def format():
                 output = ''
-                output += '**' + word + '**\n\n'
-                output += '[' + alt_spellings + ']\n\n'
-                for item in pos:
+                output += '**' + self.word + '**\n\n'
+                output += '[' + self.alt_spellings + ']\n\n'
+                for item in self.pos:
                         output += item + '\n' #todo find cases of multiple POS and add handling for them
-                for item in defs:
+                for item in self.defs:
                         output += '*\'' + item +'*\'\n'
                 return output
